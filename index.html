@@ -1,76 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funções 2</title>
+    <title>Funções com Javascript</title>
 </head>
 <body>
 
     <div class="container">
-        <h1> 
-            Funções - Javascript
-        </h1>
+        <h1 id="titulo">Função básicas em Javascript</h1>
+        <p id="mensagem">Clique nos botões para ver as ações<p>
 
-        <button class="button" onclick="toggleText()"> Mostrar / Ocultar o Texto</button>
-        <p id="toggleText"> Este exemplo de texto será exibido e ocultado</p>
+        <button class="button" onclick="mostrarAlerta()">Exibir Alerta</button>
+        <button class="button" onclick="trocarTexto()">Trocar Texto</button>
+        <button class="button" onclick="mudarCor()">Mudar Cor</button>
 
-        <h2>Calculadora Simples</h2>
-        <input type="number" name="" id="num1" placeholder="Numero 1">
-        <input type="number" name="" id="num2" placeholder="Numero 2">
-
-        <div class="botoes">
-        <button class="button" onclick="sumCalculate()">Somar</button>
-        <button class="button" onclick="subCalculate()">Subtrair</button>
-        <button class="button" onclick="multCalculate()">Multiplicar</button>
-        <button class="button" onclick="divCalculate()">Dividir</button>
-        </div>
-       
-        <p id="sumResult" >Resultado:</p>
     </div>
-
-
-
     <script>
-        // --------------Funçãoa lterar visibilidade
-        function toggleText(){  //toggle vem de alternar
-            const text = document.getElementById("toggleText")
-            text.style.display = text.style.display === "none" ? "block" : "none"
-        }  
-
-        //--------------Função somar
-        function sumCalculate(){
-            const num1 = parseFloat(document.getElementById("num1").value)
-            const num2 = parseFloat(document.getElementById("num2").value)
-            const resultado = num1 + num2
-
-            document.getElementById("sumResult").innerText = resultado
+        function mostrarAlerta(){
+            alert("Olá Mundo!");
         }
 
-        function subCalculate(){
-            const num1 = parseFloat(document.getElementById("num1").value)
-            const num2 = parseFloat(document.getElementById("num2").value)
-            const resultado = num1 - num2
-
-            document.getElementById("sumResult").innerText = resultado
+        function trocarTexto(){
+            // Pegar um elemento pelo ID, document sempre entra no documento html. o que vem depois é oq ele faz e como
+            document.getElementById("mensagem").innerText = "seu texto foi alterado!";
         }
 
-        function multCalculate(){
-            const num1 = parseFloat(document.getElementById("num1").value)
-            const num2 = parseFloat(document.getElementById("num2").value)
-            const resultado = num1 * num2
+        function mudarCor(){
+            const message = document.getElementById("mensagem");
+            message.style.color = message.style.color === "red" ? "blue" : "red";
 
-            document.getElementById("sumResult").innerText = resultado
+            
         }
 
-        function divCalculate(){
-            const num1 = parseFloat(document.getElementById("num1").value)
-            const num2 = parseFloat(document.getElementById("num2").value)
-            const resultado = num1 / num2
 
-            document.getElementById("sumResult").innerText = resultado
-        }
 
 
 
